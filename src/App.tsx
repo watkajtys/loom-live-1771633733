@@ -25,10 +25,10 @@ function App() {
               {/* Radar Sweep */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full animate-spin [animation-duration:4s]"></div>
               {/* Map Dots */}
-              <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-white rounded-full"></div>
+              <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-primary rounded-full"></div>
               <div className="absolute bottom-1/3 right-1/3 w-1 h-1 bg-primary rounded-full shadow-[0_0_8px_rgba(19,200,236,0.8)]"></div>
               {/* Center user dot */}
-              <div className="w-1.5 h-1.5 bg-white rounded-full z-10 shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
+              <div className="w-1.5 h-1.5 bg-primary rounded-full z-10 shadow-[0_0_8px_rgba(19,200,236,0.8)]"></div>
               {/* Grid lines */}
               <div className="absolute inset-0 border-[0.5px] border-primary/10 rounded-full scale-50"></div>
               <div className="absolute inset-0 border-[0.5px] border-primary/10 rounded-full scale-75"></div>
@@ -107,7 +107,7 @@ function App() {
           </div>
         </div>
         {/* Selected Node Details (Context) */}
-        <div className="absolute bottom-32 left-4 right-4 pointer-events-auto z-40">
+        <div className="absolute bottom-8 left-4 right-4 pointer-events-auto z-40">
           <div className="bg-surface-dark/60 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex items-center justify-between shadow-2xl">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded bg-primary/20 flex items-center justify-center text-primary">
@@ -120,30 +120,6 @@ function App() {
             </div>
             <button className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-colors">
               <span className="material-symbols-outlined text-sm">more_vert</span>
-            </button>
-          </div>
-        </div>
-        {/* Bottom Controls / Floating Dock */}
-        <div className="flex justify-center pb-8 pt-4 px-6 pointer-events-auto bg-gradient-to-t from-background-dark to-transparent z-50">
-          <div className="flex items-center gap-2 bg-surface-dark/80 backdrop-blur-xl border border-white/10 p-2 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-            <button className="flex flex-col items-center justify-center w-16 h-14 rounded-xl hover:bg-white/5 text-slate-400 hover:text-white transition-all group">
-              <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">pan_tool</span>
-              <span className="text-[9px] font-medium tracking-wide uppercase">Pan</span>
-            </button>
-            <div className="w-px h-8 bg-white/10 mx-1"></div>
-            <button className="flex flex-col items-center justify-center w-16 h-14 rounded-xl hover:bg-white/5 text-primary hover:text-primary transition-all relative group">
-              <div className="absolute inset-0 bg-primary/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">add_circle</span>
-              <span className="text-[9px] font-medium tracking-wide uppercase">Sphere</span>
-            </button>
-            <button className="flex flex-col items-center justify-center w-16 h-14 rounded-xl hover:bg-white/5 text-slate-400 hover:text-indigo-300 transition-all group">
-              <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">all_inclusive</span>
-              <span className="text-[9px] font-medium tracking-wide uppercase">Portal</span>
-            </button>
-            <div className="w-px h-8 bg-white/10 mx-1"></div>
-            <button className="flex flex-col items-center justify-center w-16 h-14 rounded-xl hover:bg-white/5 text-slate-400 hover:text-white transition-all group">
-              <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">visibility</span>
-              <span className="text-[9px] font-medium tracking-wide uppercase">Inspect</span>
             </button>
           </div>
         </div>
