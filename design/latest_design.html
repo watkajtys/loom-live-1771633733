@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Infinite Spatial Canvas Workspace</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
         tailwind.config = {
@@ -28,18 +26,13 @@
 <style>
         body {
             font-family: 'Inter', sans-serif;
-        }
-        /* Custom scrollbar hide for cleaner UI */
-        .no-scrollbar::-webkit-scrollbar {
+        }.no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
-        }
-        
-        /* Grid Pattern */
-        .bg-grid-pattern {
+        }.bg-grid-pattern {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -50,20 +43,42 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
   </head>
 <body class="bg-background-light dark:bg-background-dark h-screen w-full overflow-hidden relative font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
-<!-- Infinite Canvas Container -->
 <div class="absolute inset-0 w-[200%] h-[200%] -left-[50%] -top-[30%] bg-grid-pattern transform scale-100 origin-center cursor-grab active:cursor-grabbing">
-<!-- SVG Layer for Connection Lines -->
 <svg class="absolute inset-0 w-full h-full pointer-events-none z-0">
-<!-- Curve from Image to Text -->
-<path d="M 50% 45% C 55% 45%, 60% 50%, 65% 55%" fill="none" stroke="#135bec" stroke-opacity="0.4" stroke-width="2"></path>
-<!-- Curve from Text to Video -->
-<path d="M 65% 58% C 65% 65%, 55% 70%, 50% 75%" fill="none" stroke="#135bec" stroke-opacity="0.4" stroke-width="2"></path>
-<!-- Curve from Image to PDF -->
-<path d="M 48% 45% C 40% 45%, 35% 50%, 30% 60%" fill="none" stroke="#135bec" stroke-opacity="0.4" stroke-width="2"></path>
+<defs>
+<marker id="arrowhead" markerHeight="7" markerWidth="10" orient="auto" refX="9" refY="3.5">
+<polygon fill="#135bec" fill-opacity="0.6" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+<marker id="arrowhead-red" markerHeight="7" markerWidth="10" orient="auto" refX="9" refY="3.5">
+<polygon fill="#ef4444" fill-opacity="0.6" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+<path d="M 50% 45% C 55% 45%, 60% 50%, 65% 55%" fill="none" id="path1" marker-end="url(#arrowhead)" stroke="#135bec" stroke-opacity="0.4" stroke-width="2"></path>
+<path d="M 65% 58% C 65% 65%, 55% 70%, 50% 75%" fill="none" id="path2" marker-end="url(#arrowhead)" stroke="#135bec" stroke-opacity="0.4" stroke-width="2"></path>
+<path d="M 48% 45% C 40% 45%, 35% 50%, 30% 60%" fill="none" id="path3" marker-end="url(#arrowhead-red)" stroke="#ef4444" stroke-opacity="0.4" stroke-width="2"></path>
 </svg>
-<!-- Node 1: Image Card (Center-ish Top) -->
+<div class="absolute left-[58%] top-[48%] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+<span class="px-2 py-0.5 rounded-full bg-[#101622]/90 border border-primary/30 text-[10px] text-primary font-medium shadow-sm backdrop-blur-sm whitespace-nowrap">
+            Inspired by
+        </span>
+</div>
+<div class="absolute left-[59%] top-[68%] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+<span class="px-2 py-0.5 rounded-full bg-[#101622]/90 border border-primary/30 text-[10px] text-primary font-medium shadow-sm backdrop-blur-sm whitespace-nowrap">
+            Supports
+        </span>
+</div>
+<div class="absolute left-[37%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+<span class="px-2 py-0.5 rounded-full bg-[#101622]/90 border border-red-500/30 text-[10px] text-red-400 font-medium shadow-sm backdrop-blur-sm whitespace-nowrap">
+            Refutes
+        </span>
+</div>
 <div class="absolute left-[45%] top-[40%] w-72 bg-[#192233] rounded-xl shadow-lg border border-slate-700/50 p-3 z-10 hover:border-primary/50 transition-colors group">
 <div class="w-full aspect-video bg-cover bg-center rounded-lg mb-3 relative overflow-hidden" data-alt="Team brainstorming session on a whiteboard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIWGZTeP8L2a2CinGR6wY8BIxzM-SSfav4Rzem8OQLrrysDGj_rT2Xx7IvHBUFsPdWmN34cpiRpPC3fmzgu6L66bknBVEMx3VWW8vjOeAX_hyFJxMW_U1-qlqtqs5ZuevZxUWn2JxTah50THIo_IVA-P7d-K5konp8oB_bV7tgXR0tMknAzxTxA43Msvslu7VJ9sp2ul12uTwaHNZo8mfsZBAzcl6ER6EvXTWHoidqXzgRfco9eky_3Wo_F8i5x9dcVsRU_hX8V44');">
 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
@@ -78,21 +93,19 @@
 </button>
 </div>
 </div>
-<!-- Node 2: Text Snippet (Right Side) -->
 <div class="absolute left-[65%] top-[55%] w-64 bg-[#192233] rounded-xl shadow-lg border border-slate-700/50 p-4 z-10 hover:border-primary/50 transition-colors">
 <div class="flex items-center gap-2 mb-2 text-yellow-400">
 <span class="material-symbols-outlined text-base">sticky_note_2</span>
 <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Note</span>
 </div>
 <p class="text-slate-200 text-sm leading-relaxed">
-                Remember to check the API docs for the new endpoint regarding user authentication flows.
-            </p>
+            Remember to check the API docs for the new endpoint regarding user authentication flows.
+        </p>
 <div class="mt-3 flex -space-x-2">
 <div class="w-6 h-6 rounded-full bg-slate-600 border border-[#192233]" title="User A"></div>
 <div class="w-6 h-6 rounded-full bg-primary border border-[#192233] flex items-center justify-center text-[10px] text-white" title="User B">JP</div>
 </div>
 </div>
-<!-- Node 3: Video Node (Bottom Center) -->
 <div class="absolute left-[45%] top-[72%] w-80 bg-[#192233] rounded-xl shadow-lg border border-slate-700/50 overflow-hidden z-10 hover:border-primary/50 transition-colors group">
 <div class="relative h-40 bg-cover bg-center" data-alt="User interview video recording thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9qD5piMG4PhpYIIOgSmoMNOiBwVI1UkREDz67f_uj_5254SXqbPCRkjZ5-u95KYRLnDCxwOHjK4JY4kTTfB96dqbIUnZi1nOHvoLJvm0mqZVBVcMa8wRNWL2zb-y5oZsU-6If21vmKqqTVxwjhNq6I4K0IOdeYilzMl1es0YxX-d4wLL4xf5h-EDxz4BTSf88p72dedN-SMcSSIGQ9br00SGn3GnwNv32zyHkSlr3_EWelTfNyYN2OlvZ6gt-Dr2klAIm5g3zKO4');">
 <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
@@ -110,7 +123,6 @@
 </div>
 </div>
 </div>
-<!-- Node 4: PDF File (Left Side) -->
 <div class="absolute left-[25%] top-[58%] w-56 bg-[#192233] rounded-xl shadow-lg border border-slate-700/50 p-3 flex items-center gap-3 z-10 hover:border-primary/50 transition-colors cursor-pointer">
 <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined">picture_as_pdf</span>
@@ -121,9 +133,7 @@
 </div>
 </div>
 </div>
-<!-- UI Overlay Layer (Fixed) -->
 <div class="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 z-50">
-<!-- Top Left: Header / HUD -->
 <div class="pointer-events-auto self-start">
 <div class="flex items-center gap-3 bg-[#192233]/80 backdrop-blur-md border border-white/10 p-2 pr-4 rounded-xl shadow-lg">
 <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 text-white transition-colors">
@@ -139,7 +149,6 @@
 </button>
 </div>
 </div>
-<!-- Right Side: Zoom Controls -->
 <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-auto flex flex-col gap-2">
 <div class="flex flex-col bg-[#192233]/80 backdrop-blur-md border border-white/10 rounded-lg shadow-lg overflow-hidden">
 <button class="w-10 h-10 flex items-center justify-center text-white hover:bg-white/10 active:bg-white/20 transition-colors border-b border-white/5">
@@ -153,34 +162,27 @@
 <span class="material-symbols-outlined text-xl">center_focus_strong</span>
 </button>
 </div>
-<!-- Bottom Section -->
 <div class="pointer-events-auto w-full flex items-end justify-center relative pb-2">
-<!-- Bottom Gradient for FAB contrast -->
 <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-dark to-transparent pointer-events-none -z-10"></div>
-<!-- FAB: Add Node -->
 <button class="w-16 h-16 rounded-full bg-primary text-white shadow-[0_0_20px_rgba(19,91,236,0.5)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all group z-20">
 <span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300">add</span>
 </button>
-<!-- Mini Map (Bottom Right) -->
 <div class="absolute right-0 bottom-0 pointer-events-auto">
 <div class="w-24 h-36 bg-[#192233]/90 backdrop-blur-md border border-white/10 rounded-lg shadow-xl relative overflow-hidden group hover:border-white/20 transition-colors">
-<!-- Mini Map Grid -->
 <div class="absolute inset-0 opacity-20 bg-grid-pattern" style="background-size: 10px 10px;"></div>
-<!-- Mini Nodes (Simplified representation) -->
 <div class="absolute left-[45%] top-[40%] w-4 h-3 bg-slate-500 rounded-[1px]"></div>
 <div class="absolute left-[65%] top-[55%] w-3 h-3 bg-yellow-500/50 rounded-[1px]"></div>
 <div class="absolute left-[45%] top-[72%] w-4 h-4 bg-primary/50 rounded-[1px]"></div>
 <div class="absolute left-[25%] top-[58%] w-3 h-2 bg-red-500/50 rounded-[1px]"></div>
-<!-- Viewport Indicator -->
 <div class="absolute left-[40%] top-[35%] w-1/3 h-1/3 border-2 border-primary rounded-sm bg-primary/10 shadow-[0_0_10px_rgba(19,91,236,0.3)] cursor-move"></div>
 </div>
 </div>
-<!-- Zoom Level Badge (Bottom Left) -->
 <div class="absolute left-0 bottom-0 pointer-events-auto">
 <div class="bg-[#192233]/80 backdrop-blur-md border border-white/10 px-2 py-1 rounded-md text-[10px] font-mono text-slate-400">
-                    100%
-                </div>
+                100%
+            </div>
 </div>
 </div>
 </div>
+
 </body></html>
