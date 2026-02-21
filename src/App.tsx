@@ -2,7 +2,7 @@ import './index.css';
 
 function App() {
   return (
-    <div className="bg-black text-slate-100 font-display overflow-hidden h-screen w-full relative">
+    <div className="bg-background-dark text-slate-100 font-display overflow-hidden h-screen w-full relative">
       {/* Background Layer: The Void */}
       <div className="absolute inset-0 w-full h-full z-0 bg-cosmic-gradient overflow-hidden">
         {/* Stars/Particles */}

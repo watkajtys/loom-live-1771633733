@@ -1,9 +1,9 @@
 diff a/tailwind.config.js b/tailwind.config.js	(rejected hunks)
-@@ -4,8 +4,30 @@ export default {
+@@ -4,8 +4,24 @@ export default {
      "./index.html",
      "./src/**/*.{js,ts,jsx,tsx}",
    ],
-+  darkMode: "selector",
++  darkMode: "class",
    theme: {
 -    extend: {},
 +    extend: {
@@ -17,13 +17,7 @@ diff a/tailwind.config.js b/tailwind.config.js	(rejected hunks)
 +        "display": ["Space Grotesk", "sans-serif"],
 +        "body": ["Noto Sans", "sans-serif"],
 +      },
-+      borderRadius: {
-+        "DEFAULT": "0.25rem",
-+        "lg": "0.5rem",
-+        "xl": "0.75rem",
-+        "2xl": "1rem",
-+        "full": "9999px"
-+      },
++      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
 +      backgroundImage: {
 +        'cosmic-gradient': 'radial-gradient(circle at 50% 50%, #112a30 0%, #050a0c 100%)',
 +      }
